@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Task-1 -->
+    <h2>Create Cricle and Label:</h2>
+    <div id="parentDiv">
+
+    </div>
+    <div>
+        <button onclick="createCricle()">Create Cricle</button>
+        <button onclick="createLabel()">Create Label</button>
+    </div>
+   
+    <script>
+        function createLabel() {
+            var myLabel = document.createElement("label");
+            myLabel.innerText = "This is demo Lable";
+            myLabel.style.color = "blue";
+
+            document.getElementById("parentDiv").append(myLabel)
+        }
+
+        function createCricle() {
+            var myDiv = document.createElement("div");
+            myDiv.style.width = "100px";
+            myDiv.style.height = "100px";
+            myDiv.style.borderRadius = "50px";
+            myDiv.style.backgroundColor = "yellow";
+            document.getElementById("parentDiv").append(myDiv);
+        }
+    </script>
+<hr><hr>
+<br>
+<!-- Task-2 -->
+<h2><u>ToDo List:</u></h2>
+<div>
+    <input type="text" placeholder="Todo Item Name" id="txtTaskName"/>
+    <button onclick="addTask()">Add Task</button>
+</div>
+<div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Task Name</th>
+            </tr>
+        </thead>
+        <tbody id="myTaskList">
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+  
+    function addTask() {
+        var taskName = document.getElementById("txtTaskName").value;
+
+        var myTr = document.createElement("tr");
+        var myTd = document.createElement("td");
+        myTd.innerText = taskName;
+        myTr.append(myTd);
+
+        document.getElementById("myTaskList").append(myTr)
+    }
+
+
+</script>
+<hr>
+<hr>
+<!-- Task-3 -->
+<h2>Print Table</h2>
+<input type="text" placeholder="Todo Item Name" id="txtTaskName1"/>
+<button onclick="printTable()">Print Table</button>
+
+<div>
+    <ul id="myUl">
+
+    </ul>
+</div>
+<script>
+       function printTable() {
+         document.getElementById("myUl").innerHTML = "";
+        var num = document.getElementById("txtTaskName1").value;
+        for(var index= 1;index <11; index++) {
+            var txt = num + " * " + index + " = "+ num* index;
+            var myLi = document.createElement("li");
+            myLi.innerText = txt;
+
+            document.getElementById("myUl").append(myLi);
+        }
+    }
+</script>
+</body>
+</html>
